@@ -10,6 +10,10 @@ class Customer extends Model
     /** @use HasFactory<\Database\Factories\CustomerFactory> */
     use HasFactory;
 
+    protected $fillable = [
+        'customer_id',
+    ];
+
     public function Transaction()
     {
         return $this->hasMany(Transaction::class, 'customer_id', 'id');

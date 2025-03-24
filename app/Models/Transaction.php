@@ -10,6 +10,16 @@ class Transaction extends Model
     /** @use HasFactory<\Database\Factories\TransactionFactory> */
     use HasFactory;
 
+    protected $fillable = [
+        'customer_id',
+        'fleet_id',
+        'started_at',
+        'ended_at',
+        'status',
+        'base_price',
+        'total_price',
+    ];
+
     public function Customer()
     {
         return $this->belongsTo(Customer::class, 'customer_id', 'id');

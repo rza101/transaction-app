@@ -8,7 +8,7 @@ class FleetController extends Controller
 {
     public function index()
     {
-        $fleets = Fleet::all();
+        $fleets = Fleet::paginate(10);
         return view('fleet.index', ['fleets' => $fleets]);
     }
 }

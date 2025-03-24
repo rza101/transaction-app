@@ -17,7 +17,7 @@ class FleetFactory extends Factory
     public function definition(): array
     {
         return [
-            'license_number' => $this->faker->bothify('BG #### ???'),
+            'license_number' => strtoupper($this->faker->bothify('BG #### ???')),
             'name' => $this->faker->word(),
         ];
     }

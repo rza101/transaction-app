@@ -7,28 +7,27 @@
 @stop
 
 @section('content')
-    <table class="table border-black-1">
-        <tr>
-            <th>
-                No.
-            </th>
-            <th>
-                Name
-            </th>
-        </tr>
-        @foreach ($customers as $customer)
+    <div class="container-fluid">
+        <table class="table">
             <tr>
-                <td>
-                    {{ $customer->id }}
-                </td>
-                <td>
-                    {{ $customer->name }}
-                </td>
+                <th>No.</th>
+                <th>Name</th>
             </tr>
-        @endforeach
-    </table>
 
-    <div>
-        {{ $customers->links() }}
+            @foreach ($customers as $customer)
+                <tr>
+                    <td>
+                        {{ $customer->id }}
+                    </td>
+                    <td>
+                        {{ $customer->name }}
+                    </td>
+                </tr>
+            @endforeach
+        </table>
+
+        <div>
+            {{ $customers->links('pagination::bootstrap-4') }}
+        </div>
     </div>
 @stop
